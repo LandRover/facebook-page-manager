@@ -22,14 +22,22 @@
                     //app: path.join(cwd, 'app'),
                     src: {
                         js: 'resources/assets/js',
-                        assets: 'resources/assets'
+                        assets: 'resources/assets',
+                        images: 'resources/assets/images'
+                    },
+                    
+                    debug: {
+                        dir: path.join(cwd, 'public/debug'),
+                        assets: path.join(cwd, 'public/debug/assets'),
+                        images: path.join(cwd, 'public/debug/assets/images'),
+                        index: path.join(cwd, 'public/release/index.debug.html')
                     },
                     
                     release: {
-                        dir: path.join(cwd, 'public/release'),
-                        assets: path.join(cwd, 'public/release/assets'),
-                        index: path.join(cwd, 'public/release/index.html'),
-                        indexDebug: path.join(cwd, 'public/release/index.debug.html')
+                        dir: path.join(cwd, 'public/build'),
+                        assets: path.join(cwd, 'public/build/assets'),
+                        images: path.join(cwd, 'public/build/assets/images'),
+                        index: path.join(cwd, 'public/build/index.html')
                     },
                     
                     lib: {

@@ -2,7 +2,7 @@ module.exports = function(grunt, options) {
     return {
         release: {
             files: {
-                '<%= build.paths.release.assets %>/css/app.css': '<%= build.paths.src.assets %>/sass/app.scss'
+                '<%= build.paths.debug.assets %>/css/app.css': '<%= build.paths.src.assets %>/sass/app.scss'
             }
         },
         
