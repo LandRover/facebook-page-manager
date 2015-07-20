@@ -4,3 +4,5 @@
 Homestead.yaml
 .env
 composer.lock
+.sass-cache
+public/release

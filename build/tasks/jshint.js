@@ -2,10 +2,11 @@ module.exports = function(grunt, options) {
     return {
         src: {
             src: [
-                '<%= build.dir.src.js %>/**/*.js'
+                '<%= build.paths.src.js %>/**/*.js'
                 //'specs/**/*Spec.js'
             ]
         },
+        
         
         tasks: {
             src: [

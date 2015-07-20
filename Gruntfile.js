@@ -18,11 +18,11 @@
             pkg: grunt.file.readJSON('package.json'),
             
             build: {
-                dir: {
+                paths: {
                     //app: path.join(cwd, 'app'),
                     src: {
-                        js: 'app/resources/assets/js',
-                        assets: 'app/resources/assets'
+                        js: 'resources/assets/js',
+                        assets: 'resources/assets'
                     },
                     
                     release: {

@@ -1,2 +1,13 @@
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+// code
+@import "functions";
+@import "vars-colors";
+@import "vars";
+
+// fonts
+@import "../../../bower_components/roboto-fontface/css/roboto-fontface";
+@import "../../../bower_components/font-awesome/scss/font-awesome";
+
+// bootstrap
+@import "../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "bootstrap-override";
 
