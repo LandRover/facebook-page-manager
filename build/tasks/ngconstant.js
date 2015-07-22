@@ -6,6 +6,12 @@ module.exports = function(grunt, options) {
               version: '<%= pkg.version %>'
             }
           }
+        },
+        
+        
+        options: {
+            dest: '<%= build.paths.src.js %>/app.definitions.js',
+            name: 'app.definitions',
         }
     };
 };

@@ -7,3 +7,4 @@ composer.lock
 .sass-cache
 public/release
 public/debug
+.tmp
