@@ -26,8 +26,8 @@
                 paths: {
                     //app: path.join(cwd, 'app'),
                     src: {
-                        dir: path.join(dirs.src),
-                        js: path.join(dirs.src, 'js'),
+                        dir: path.join(cwd, dirs.src),
+                        js: path.join(cwd, dirs.src, 'js'),
                         css: path.join(dirs.src, 'css'),
                         images: path.join(dirs.src, 'images'),
                         index: path.join(dirs.src, 'index.src.html')
@@ -74,12 +74,8 @@
         'sass',
         //'ngconstant',
         'copy:debug',
-        'useminPrepare',
-        'concat:generated',
         'cssmin',
-        'uglify:generated',
-        'filerev',
-        'usemin',
+        //'filerev',
         'imagemin',
         'usebanner'
     ]);
@@ -87,7 +83,6 @@
     
     // Common task
     grunt.registerTask('debug', [
-        'grep:debug',
         'common'
     ]);
 };
