@@ -2,28 +2,20 @@
   "name": "facebook-page-manager",
   "version": "1.0.0-dev",
   "description": "Yet another facebook integration",
-  
   "main": "dist/fb-page-manager.js",
-  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  
   "repository": {
     "type": "git",
     "url": "https://github.com/LandRover/facebook-page-manager.git"
   },
-  
   "author": "Oleg Glozman",
-  
   "license": "MIT",
-  
   "bugs": {
     "url": "https://github.com/LandRover/facebook-page-manager/issues"
   },
-  
   "homepage": "https://github.com/LandRover/facebook-page-manager",
-  
   "devDependencies": {
     "bower": "1.4.1",
     "grunt": "0.4.5",
