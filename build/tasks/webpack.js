@@ -6,17 +6,20 @@ module.exports = function(grunt, options) {
     return {
         options: {
             debug: true,
+            
             resolve: {
                 fallback: __bower_dir,
                 
+                extensions: ['', '.js'],
+                
                 modulesDirectories: [
-                    options.build.js,
-                    options.build.src
+                    options.build.paths.src.js,
+                    __node_dir,
+                    __bower_dir
                 ],
                 
                 alias: {
-                    //jQuery: __bower_dir + '/jquery/src/jquery.js',
-                    lodash: __bower_dir + '/lodash/lodash.js'
+                    //lodash: __bower_dir + '/lodash/lodash.js'
                 }
             },
             
@@ -30,14 +33,20 @@ module.exports = function(grunt, options) {
             
             module: {
                 loaders: [
-                    { test: /\.html$/, loader: 'html-loader' }
+                    {test: /jquery\.js$/, loader: 'expose?$'},
+                    {test: /jquery\.js$/, loader: 'expose?jQuery'},
+                    {test: /[\/]angular\.js$/, loader: 'exports?angular'},
+                    {test: /\.css$/, loader: 'style!css'},
+                    {test: /\.less$/, loader: 'style!css!less'},
+                    {test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},
+                    {test: /\.html$/, exclude: /node_modules/, loader: 'html-loader'},
+                    {test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000'}
                 ]
             },
             
             progress: true,
             
             externals: {
-                jquery: 'jquery',
                 lodash: 'lodash'
             }
         },
@@ -50,11 +59,25 @@ module.exports = function(grunt, options) {
             debug: true,
             
             entry: {
-                fbpgmngr: options.build.js + '/fb-pg-mngr.js'
+                app: [options.build.paths.src.js + '/bootstrap.js'],
+                vendor: [
+                    'jquery',
+                    'angular',
+                    'angular-route',
+                    'angular-animate',
+                    'angular-sanitize',
+                    'angular-cookies',
+                    'angular-local-storage',
+                    'angular-resource',
+                    'angular-loading-bar',
+                    'c3',
+                    'c3-angular',
+                    'bootstrap-material-design/dist/js/ripples'
+                ]
             },
             
             output: {
-                path: options.build.dir.debug,
+                path: options.build.paths.debug.js,
                 filename: 'fb-pg-mngr.js',
                 library: 'fb-pg-mngr',
                 libraryTarget: 'umd',
@@ -65,6 +88,8 @@ module.exports = function(grunt, options) {
                 new webpack.DefinePlugin({
                     __DEBUG__: true
                 }),
+                
+                new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
                 
                 new webpack.ProvidePlugin({
                     $: "jquery",
@@ -81,11 +106,12 @@ module.exports = function(grunt, options) {
          */
         release: {
             entry: {
-                fbpgmngr: options.build.js + '/fb-pg-mngr.js'
+                app: [options.build.paths.src.js + '/bootstrap.js'],
+                vendor: ['angular', 'angular-route', 'angular-cookies']
             },
             
             output: {
-                path: options.build.dir.release,
+                path: options.build.paths.release.js,
                 filename: 'fb-pg-mngr.js',
                 library: 'fb-pg-mngr',
                 libraryTarget: 'umd',
@@ -97,9 +123,11 @@ module.exports = function(grunt, options) {
                     __DEBUG__: false
                 }),
                 
+                new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
+                
                 new webpack.DefinePlugin({'process.env.NODE_ENV': '"production"'}),
                 new webpack.optimize.DedupePlugin(),
-                new webpack.optimize.UglifyJsPlugin({ sourceMap: false }),
+                new webpack.optimize.UglifyJsPlugin({sourceMap: false}),
                 new webpack.optimize.OccurenceOrderPlugin(),
                 new webpack.optimize.AggressiveMergingPlugin()
             ]
