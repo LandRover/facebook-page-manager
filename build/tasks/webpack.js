@@ -78,7 +78,7 @@ module.exports = function(grunt, options) {
             },
             
             output: {
-                path: options.build.paths.debug.js,
+                path: options.build.paths.build.js,
                 filename: 'fb-pg-mngr.js',
                 library: 'fb-pg-mngr',
                 libraryTarget: 'umd',
@@ -112,7 +112,7 @@ module.exports = function(grunt, options) {
             },
             
             output: {
-                path: options.build.paths.release.js,
+                path: options.build.paths.build.js,
                 filename: 'fb-pg-mngr.js',
                 library: 'fb-pg-mngr',
                 libraryTarget: 'umd',

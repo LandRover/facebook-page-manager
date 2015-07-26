@@ -5,14 +5,16 @@ module.exports = function(grunt, options) {
                 expand: true,
                 
                 src: [
-                    '<%= build.paths.src.dir %>/**',
-                    'config/**',
-                    '<%= build.paths.release.dir %>/**',
-                    '<%= build.paths.src.dir %>/html/**',
-                    '<%= build.paths.src.index %>',
-                    '.bowerrc', '.gitignore', 'bower.json', 'CHANGELOG.md', 'Gruntfile.js', 'package.json', 'README.md',
-                    '!<%= build.paths.src.dir %>/html/build/**',
-                    '!config/html.js',
+                    '**',
+                    '!<%= build.paths.build.assets %>/**',
+                    '.env.example',
+                    '.gitattributes',
+                    '.gitignore',
+                    '!storage/**',
+                    '!bower_components/**',
+                    '!node_modules/**',
+                    '!vendor/**',
+                    '!composer.lock',
                     '!releases/**'
                 ],
                 

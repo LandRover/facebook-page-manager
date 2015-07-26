@@ -2,8 +2,8 @@ module.exports = function(grunt, options) {
     return {
         release: {
             src: [
-                '<%= build.paths.release.js %>/**/*.js',
-                '<%= build.paths.release.css %>/**/*.css',
+                '<%= build.paths.build.js %>/**/*.js',
+                '<%= build.paths.build.css %>/**/*.css',
             ]
         },
         

@@ -3,8 +3,8 @@ module.exports = function(grunt, options) {
         release: {
             files: {
                 src: [
-                      '<%= build.paths.release.dir %>/*.css',
-                      '<%= build.paths.release.dir %>/*.js'
+                      '<%= build.paths.build.dir %>/*.css',
+                      '<%= build.paths.build.dir %>/*.js'
                 ]
             },
             

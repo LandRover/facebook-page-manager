@@ -3,23 +3,12 @@ module.exports = function(grunt, options) {
         filesPattern = '**/*.{png,jpg,gif,svg,xml,json,ico}';
     
     return {
-        debug: {
+        build: {
             dynamic: {
                 files: [{
                     cwd: imagesSrcDir,
                     src: [filesPattern],
-                    dest: '<%= build.paths.debug.images %>',
-                    expand: true
-                }]
-            }
-        },
-        
-        release: {
-            dynamic: {
-                files: [{
-                    cwd: imagesSrcDir,
-                    src: [filesPattern],
-                    dest: '<%= build.paths.release.images %>',
+                    dest: '<%= build.paths.build.images %>',
                     expand: true
                 }]
             }
