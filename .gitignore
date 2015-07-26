@@ -5,6 +5,7 @@ Homestead.yaml
 .env
 composer.lock
 .sass-cache
+release
 public/release
 public/debug
 .tmp
