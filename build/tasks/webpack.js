@@ -65,6 +65,7 @@ module.exports = function(grunt, options) {
                     'angular',
                     'angular-route',
                     'angular-animate',
+                    'ng-ipsum/src/ipsum',
                     'angular-sanitize',
                     'angular-cookies',
                     'angular-local-storage',
