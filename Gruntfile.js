@@ -5,8 +5,7 @@
         cwd = process.cwd(),
         dirs = {
             src: 'resources/assets',
-            debug: 'public/debug',
-            release: 'public/build'
+            build: 'public/assets'
         };
     
     // Print the execution time for the tasks
@@ -24,38 +23,27 @@
             
             build: {
                 paths: {
-                    //app: path.join(cwd, 'app'),
                     src: {
+                        root: cwd,
                         dir: path.join(cwd, dirs.src),
                         js: path.join(cwd, dirs.src, 'js'),
                         css: path.join(dirs.src, 'css'),
-                        images: path.join(dirs.src, 'images'),
-                        index: path.join(dirs.src, 'index.src.html')
+                        images: path.join(dirs.src, 'images')
                     },
                     
-                    debug: {
-                        dir: path.join(dirs.debug),
-                        assets: path.join(dirs.debug, 'assets'),
-                        js: path.join(dirs.debug, 'assets/js'),
-                        css: path.join(dirs.debug, 'assets/css'),
-                        images: path.join(dirs.debug, 'assets/images'),
-                        fonts: path.join(dirs.debug, 'assets/fonts'),
-                        index: path.join(dirs.debug, 'index.html')
-                    },
-                    
-                    release: {
-                        dir: path.join(dirs.release),
-                        assets: path.join(dirs.release, 'assets'),
-                        js: path.join(dirs.release, 'assets/js'),
-                        css: path.join(dirs.release, 'assets/css'),
-                        images: path.join(dirs.release, 'assets/images'),
-                        fonts: path.join(dirs.release, 'assets/fonts'),
-                        index: path.join(dirs.release, 'index.html')
+                    build: {
+                        dir: path.join(dirs.build, '../'),
+                        assets: path.join(dirs.build),
+                        js: path.join(dirs.build, 'js'),
+                        css: path.join(dirs.build, 'css'),
+                        images: path.join(dirs.build, 'images'),
+                        fonts: path.join(dirs.build, 'fonts')
                     },
                     
                     lib: {
                         node: path.join(cwd, 'node_modules'),
-                        bower: path.join(cwd, 'bower_components')
+                        bower: path.join(cwd, 'bower_components'),
+                        composer: path.join(cwd, 'vendor')
                     }
                 },
                 
@@ -66,15 +54,14 @@
     
     // Default task
     grunt.registerTask('default', [
-        'jshint:src'
+        'debug'
     ]);
     
     // Common task
     grunt.registerTask('common', [
         'sass',
         //'ngconstant',
-        'copy:debug',
-        'cssmin',
+        'copy',
         //'filerev',
         'imagemin',
         'usebanner'
@@ -83,6 +70,7 @@
     
     // Common task
     grunt.registerTask('debug', [
-        'common'
+        'common',
+        'webpack:debug'
     ]);
 };
