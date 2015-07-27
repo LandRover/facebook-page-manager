@@ -59,8 +59,7 @@
     
     // Common task
     grunt.registerTask('common', [
-        'sass',
-        //'ngconstant',
+        'ngconstant',
         'copy',
         //'filerev',
         'imagemin',
@@ -71,6 +70,8 @@
     // Common task
     grunt.registerTask('debug', [
         'common',
-        'webpack:debug'
+        'sass:debug',
+        'webpack:debug',
+        'clean:afterBuild'
     ]);
 };
