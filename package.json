@@ -1,6 +1,6 @@
 {
   "name": "facebook-page-manager",
-  "version": "0.0.1-dev",
+  "version": "0.0.2-dev",
   "description": "Yet another facebook integration",
   "main": "public/assets/js/fb-page-manager.js",
   "scripts": {
