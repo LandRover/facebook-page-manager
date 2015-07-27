@@ -53,9 +53,7 @@
     });
     
     // Default task
-    grunt.registerTask('default', [
-        'debug'
-    ]);
+    grunt.registerTask('default', 'debug');
     
     // Common task
     grunt.registerTask('common', [
