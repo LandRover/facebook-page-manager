@@ -1,8 +1,8 @@
 {
   "name": "facebook-page-manager",
-  "version": "1.0.0-dev",
+  "version": "0.0.1-dev",
   "description": "Yet another facebook integration",
-  "main": "dist/fb-page-manager.js",
+  "main": "public/assets/js/fb-page-manager.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -30,12 +30,10 @@
     "grunt-contrib-uglify": "0.9.1",
     "grunt-contrib-watch": "0.6.1",
     "grunt-filerev": "2.3.1",
-    "grunt-grep": "^0.7.0",
     "grunt-html-snapshot":"git://github.com/yourivdlans/grunt-html-snapshot.git#ym-patches",
     "grunt-ng-constant": "1.1.0",
-    "grunt-prettify":"latest",
     "grunt-jsonlint": "1.0.4",
-    "gzip-js": "0.3.2",
+
     "grunt-webpack": "1.0.11",
     "html-loader": "0.3.0",
     "url-loader": "0.5.6",
@@ -44,14 +42,14 @@
     "imports-loader": "~0.6.3",
     "expose-loader": "~0.7.0",
     "script-loader": "~0.6.1",
-    "node.extend": "~1.1.3",
+    
     "native-promise-only": "0.7.8-a",
     "load-grunt-config": "0.16.0",
     "load-grunt-tasks": "3.1.0",
     "time-grunt": "1.0.0",
-
+    
     "jquery": "2.1.4",
-
+    
     "bootstrap-additions": "~0.3.1",
     "bootstrap-sass": "~3.3.5",
     "bootstrap-validator": "~0.9.0",
@@ -75,7 +73,7 @@
     "c3": "~0.4.10",
     "c3-angular": "github://jettro/c3-angular-directive",
     "d3": "~3.5.0",
-
+    
     "font-awesome": "4.3.0",
     "roboto-fontface": "~0.4.2",
     "material-design-iconic-font": "~2.1.1",
