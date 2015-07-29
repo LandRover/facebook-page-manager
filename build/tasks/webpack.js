@@ -108,7 +108,21 @@ module.exports = function(grunt, options) {
         release: {
             entry: {
                 app: [options.build.paths.src.js + '/bootstrap.js'],
-                vendor: ['angular', 'angular-route', 'angular-cookies']
+                vendor: [
+                    'jquery',
+                    'angular',
+                    'angular-route',
+                    'angular-animate',
+                    'ng-ipsum/src/ipsum',
+                    'angular-sanitize',
+                    'angular-cookies',
+                    'angular-local-storage',
+                    'angular-resource',
+                    'angular-loading-bar',
+                    'c3',
+                    'c3-angular',
+                    'bootstrap-material-design/dist/js/ripples'
+                ]
             },
             
             output: {
